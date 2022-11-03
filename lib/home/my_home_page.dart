@@ -27,7 +27,10 @@ class HomePage extends ConsumerWidget {
                   itemBuilder: (context, index) {
                     return InkWell(
                       onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => DetailPage(user: userList[index]),));
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) =>
+                              DetailPage(user: userList[index]),
+                        ));
                       },
                       child: Card(
                           color: Colors.greenAccent,
@@ -46,7 +49,8 @@ class HomePage extends ConsumerWidget {
                               ),
                             ),
                             trailing: CircleAvatar(
-                              backgroundImage: NetworkImage(userList[index].avatar),
+                              backgroundImage:
+                                  NetworkImage(userList[index].avatar),
                             ),
                           )),
                     );
@@ -58,7 +62,7 @@ class HomePage extends ConsumerWidget {
         },
         error: (err, stackTrace) {
           print(err);
-          return Text('helo----------------------------'+err.toString());
+          return Text('helo----------------------------' + err.toString());
           // print(object)
         },
         loading: () => const CircularProgressIndicator(),
